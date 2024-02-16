@@ -115,12 +115,12 @@ aside {
     letter-spacing: 0.05em;
 }
     .header h1 {
-        font-size: 25%;
+        font-size: 150% !important;
         font-weight: 100;
         margin: 0;
     }
      .header h2 {
-        font-size: 100% !important;
+        font-size: 65% !important;
         font-weight: 100;
         line-height: 1.5;
         margin: 0;
@@ -282,7 +282,7 @@ code {
 
 #menu {
     margin-left: -160px; /* "#menu" width */
-    width: 160px;
+    width: 180px;
     position: fixed;
     top: 0;
     left: 0;
