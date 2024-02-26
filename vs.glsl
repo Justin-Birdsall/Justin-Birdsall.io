@@ -1,4 +1,4 @@
-#version 150
+#version 300 es
 in vec4 gxl3d_Position;
 in vec4 gxl3d_TexCoord0;
 uniform mat4 gxl3d_ModelViewProjectionMatrix;
