@@ -5,6 +5,8 @@
 // via: https://twitter.com/zozuar/status/1443012484189888515
 //
 #version 300 es
+precision highhp float;
+const float P1 = 3.141592653589793
 uniform float time;
 uniform float frame;
 uniform vec2 resolution;

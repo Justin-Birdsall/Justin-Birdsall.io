@@ -253,11 +253,6 @@ float fsnoiseDigits(vec2 c)
 {
   return fract(sin(dot(c, vec2(0.129898, 0.78233))) * 437.585453);
 }
-
-
-
-
-
 vec3 hsv(float h, float s, float v)
 {
   vec4 t = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
@@ -289,32 +284,6 @@ mat3 rotate3D(float angle, vec3 axis)
         a.z * a.z * r + c
     );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 void main()
 {
   vec2 r = resolution;
@@ -331,7 +300,3 @@ void main()
   
   FragColor = o;
 }
-
-
-
-
