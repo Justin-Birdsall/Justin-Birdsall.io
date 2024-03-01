@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+    <link rel="stylesheet" href="../../node_modules/nes.css/css/nes.min.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+</head>
 <title>2D Sierpinski Gasket</title>
 
 
@@ -28,7 +30,7 @@ main()
 <script type="text/javascript" src="../../libraries/Common/webgl-utils.js"></script>
 <script type="text/javascript" src="../../libraries/Common/initShaders.js"></script>
 <script type="text/javascript" src="../../libraries/Common/MV.js"></script>
-<script type="text/javascript" src="../../hw_js/gasket5.js"></script>
+<script type="text/javascript" src="../../hw_js/hw2.2/gasket5.js"></script>
 </head>
 
 <body>
@@ -47,10 +49,13 @@ recursive steps  0 <input id="slider" type="range"
     Background Color:
     <input type="radio" name="color" value="0" >light
     <input type="radio" name="color" value="1" checked>dark
-    <input type="radio" name="color" value="2" >disco
 </div>
 <canvas id="gl-canvas" width="512" height="512">
 Oops ... your browser doesn't support the HTML5 canvas element
 </canvas>
 </body>
+<div>
+    <a href="../../zips_of_hw/hw1/birdsall-gasket.zip" download="birdsall-gasket.zip" class="nes-btn">Download Zip</a>
+
+</div>
 </html>

@@ -51,4 +51,5 @@
     
     document.addEventListener('click', handleEvent);
 
+
 }(this, this.document));

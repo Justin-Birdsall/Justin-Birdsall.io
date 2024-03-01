@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "nes.css": "^2.3.0",
+    "particlesjs": "^2.2.3",
     "purecss": "^3.0.0"
   }
 }

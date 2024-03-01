@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WebGL Example</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
+<title>three.js cube and mesh</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <body>
     <canvas id="gl-canvas"></canvas>
     <script src="main.js"></script>
@@ -14,25 +14,25 @@
         var renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
-
+        //create cube geomotry and respective mesh and then apply them together
         var cubeGeometry = new THREE.BoxGeometry();
         var cubeMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
         var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+        //add the cube to the scene
         scene.add(cube)
-
+        //create the background plane and the heightmap to manipulate values
         var planeGeometry = new THREE.PlaneGeometry(10, 10, 100, 100);
         var heightmap = new Float32Array((100 + 1) * (100 + 1));
-
+        //make the heightmap values wonky
         function updateHeightmap() {
             for (var i = 0; i <= 100; i++) {
                 for (var j = 0; j <= 100; j++) {
                     var index = i * (100 + 1) + j;
-                    // Apply your calculations here
                     heightmap[index] = Math.sin(i * 0.1) * Math.cos(j * 0.1);
                 }
             }
         }
-
+        //apply the values
         function applyHeightmap() {
             for (var i = 0; i <= 100; i++) {
                 for (var j = 0; j <= 100; j++) {
@@ -45,22 +45,23 @@
             planeGeometry.attributes.position.needsUpdate = true;
             planeGeometry.computeBoundingBox();
         }
-
-        var planeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true });
+        //now we can actually add our plane to the scene
+        var planeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true, });
         var plane = new THREE.Mesh(planeGeometry, planeMaterial);
         scene.add(plane);
-
         function animate() {
             requestAnimationFrame(animate);
-
             // Rotate the cube
             cube.rotation.x += 0.01;
             cube.rotation.y += 0.01;
-
-            // Update the heightmap and apply it to the plane geometry
-            updateHeightmap();
+            //loop over our height map and apply our function but at smaller increments to make it animate the wavyness oooo ahhhh so funky
+            for (var i = 0; i <= 100; i++) {
+                for (var j = 0; j <= 100; j++) {
+                    var index = i * (100 + 1) + j;
+                    heightmap[index] = Math.sin(i * 0.1 + Date.now() * 0.001) * Math.cos(j * 0.1 + Date.now() * 0.001);
+                }
+            }
             applyHeightmap();
-
             renderer.render(scene, camera);
         }
         animate();

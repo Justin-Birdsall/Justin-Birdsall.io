@@ -30,7 +30,10 @@ body {
     line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1{
+    font-weight: bold;
+} 
+h2, h3, h4, h5, h6 {
     font-weight: bold;
     color: rgb(75, 75, 75);
 }
@@ -97,7 +100,14 @@ aside {
     margin-left: -1em;
     margin-right: -1em;
 }
-
+.background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
 
 /* --------------------------
  * Header Module Styles
@@ -112,7 +122,7 @@ aside {
     text-align: center;
     border-bottom: 1px solid #eee;
     background: #fff;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.03em;
 }
     .header h1 {
         font-size: 150% !important;
@@ -140,11 +150,10 @@ aside {
     margin-right: auto;
     padding-left: 1em;
     padding-right: 1em;
-    max-width: 768px;
+    max-width: 786px;
 }
-
     .content .content-subhead {
-        margin: 2em 0 1em 0;
+        margin: 1em 0 1em 0;
         font-weight: 300;
         color: #888;
         position: relative;
@@ -159,7 +168,7 @@ aside {
         color: #666;
         font-style: italic;
         line-height: 1.8;
-        border-left: 5px solid #ddd;
+        border-left: 250px solid #ddd;
         padding-left: 1.5em;
     }
 
@@ -277,12 +286,12 @@ code {
 }
 
 #layout.active .menu-link {
-    left: 160px;
+    left: 150px;
 }
 
 #menu {
-    margin-left: -160px; /* "#menu" width */
-    width: 180px;
+    margin-left: -170px; /* "#menu" width */
+    width: 170px;
     position: fixed;
     top: 0;
     left: 0;
@@ -295,7 +304,7 @@ code {
         color: #999;
         border: none;
         white-space: normal;
-        padding: 0.625em 1em;
+        padding: 0.0em;
     }
 
     #menu .pure-menu-open {
@@ -323,10 +332,10 @@ code {
         position: fixed;
         display: block; /* show this only on small screens */
         top: 0;
-        left: 0; /* "#menu width" */
+        left:0px; /* "#menu width" */
         background: #000;
         background: rgba(0,0,0,0.7);
-        font-size: 11px; /* change this value to increase/decrease button size */
+        font-size: 9.5px; /* change this value to increase/decrease button size */
         z-index: 10;
         width: 4em;
         height: 4em;
@@ -390,9 +399,8 @@ code {
             }
 
     #menu .pure-menu-heading {
-        font-size: 100%;
-        font-weight: 300;
-        letter-spacing: 0.1em;
+        font-size: 120%;
+        font-weight: 100;
         color: #fff;
         margin-top: 0;
         padding: 0.5em 0.8em;
@@ -621,4 +629,14 @@ a.pure-button-primary {
         left: 160px;
     }
 
+}
+@media screen and (min-width: 64em) {
+    .pure-u-lg-1
+    {
+        display: inline-block;
+        letter-spacing: normal;
+        word-spacing: normal;
+        vertical-align: top;
+        text-rendering: auto;
+    }
 }
